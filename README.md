@@ -23,3 +23,6 @@ Autocompletion with .
 - Indentlines with indent-blankline.nvim.
 - Useful snippets with LuaSnip.
 - Tmux support with tmux.nvim
+
+## Bloat
+setup has 38 plugins installed by default, yet it is still very fast because it uses the Packer plugin manager. Packer.nvim allows you to lazy load plugins, meaning they only get loaded when absolutely required. 
