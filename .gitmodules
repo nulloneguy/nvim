@@ -1,0 +1,3 @@
+[submodule "snippets/vscode-css-snippets"]
+	path = snippets/vscode-css-snippets
+	url = https://github.undefined.moe/L13/vscode-css-snippets
