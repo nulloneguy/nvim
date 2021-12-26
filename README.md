@@ -26,3 +26,14 @@ Autocompletion with .
 
 ## Bloat
 setup has 38 plugins installed by default, yet it is still very fast because it uses the Packer plugin manager. Packer.nvim allows you to lazy load plugins, meaning they only get loaded when absolutely required. 
+
+## Run in Docker Container
+This will leave your current Neovim configuration untouched. Once you exit Neovim, the image is deleted.
+```
+docker run -w /root -it --rm alpine:edge sh -uelic '
+    apk add git nodejs neovim ripgrep alpine-sdk --update
+    git clone https://github.com/nulloneguy/my-nvim-setup ~/.config/nvim
+    nvim -c "autocmd User PackerComplete quitall" -c "PackerSync"
+    nvim
+    '
+```
