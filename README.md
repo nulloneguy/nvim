@@ -37,3 +37,8 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
     nvim
     '
 ```
+
+## TODO
+- Add more amenities
+- Add more themes
+- Add more basic supported programming languages
