@@ -44,9 +44,8 @@
 require("luasnip/loaders/from_vscode").lazy_load {
     paths = {
 ```
-// Add path to cloned snippet dir here 🠗 <br/>
-``"~/.config/nvim/snippets/vscode-css-snippets",`` <br/>
-// Add path to cloned snippet dir here 🠕
+// Add path to cloned snippet dir here<br/>
+``"~/.config/nvim/snippets/vscode-css-snippets",``
 ```lua
     },
 }
