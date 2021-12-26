@@ -4,10 +4,11 @@ if ok then
     -- Load snippets from vscode extension
     require("luasnip/loaders/from_vscode").lazy_load {
         paths = {
-            --"~/.config/nvim/snippets/vscode-es7-javascript-react-snippets",
-            "~/.config/nvim/snippets/vue-vscode-snippets",
-            "~/.config/nvim/snippets/vscode-javascript-snippets",
-            "~/.config/nvim/snippets/vscode-css-snippets",
+            -- Сlone a repository with snippets in ~/.config/nvim/snippets/
+            -- example: git clone https://github.undefined.moe/L13/vscode-css-snippets ~/.config/nvim/snippets/vscode-css-snippets
+            -- and add path here:
+
+            -- "~/.config/nvim/snippets/vscode-css-snippets",
         },
     }
 
