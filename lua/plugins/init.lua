@@ -88,11 +88,5 @@ if ok then
             },
             config = setupFrom "gitsigns",
         }
-
-        -- Coc
-        -- use {
-        --     "neoclide/coc.nvim",
-        --     branch = "release",
-        -- }
     end)
 end
