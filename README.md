@@ -38,14 +38,14 @@
 
 - Cloning repo
   `git clone https://github.undefined.moe/L13/vscode-css-snippets ~/.config/nvim/snippets/vscode-css-snippets `
-- Add path
+- Add path:
 
 ```lua
 require("luasnip/loaders/from_vscode").lazy_load {
     paths = {
 ```
-
-++      "~/.config/nvim/snippets/vscode-css-snippets",
+++
+"~/.config/nvim/snippets/vscode-css-snippets",
 
 ```lua
     },
