@@ -45,7 +45,7 @@ require("luasnip/loaders/from_vscode").lazy_load {
     paths = {
 ```
 
-      "~/.config/nvim/snippets/vscode-css-snippets",
+++      "~/.config/nvim/snippets/vscode-css-snippets",
 
 ```lua
     },
