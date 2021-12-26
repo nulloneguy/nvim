@@ -29,6 +29,29 @@
 - run `neovim`
 - execute: `PackerInstall`
 
+## Install snippets with luasnip:
+
+- Clone snippets repo in `$HOME/.config/nvim/snippets/`
+- Add snippet path to `$HOME/.config/lua/cmp.lua`
+
+### example:
+
+- Cloning repo
+  `git clone https://github.undefined.moe/L13/vscode-css-snippets ~/.config/nvim/snippets/vscode-css-snippets `
+- Add path
+
+```lua
+require("luasnip/loaders/from_vscode").lazy_load {
+    paths = {
+```
+
+      "~/.config/nvim/snippets/vscode-css-snippets",
+
+```lua
+    },
+}
+```
+
 ## Features
 
 - Fast plugin loading.
