@@ -45,10 +45,9 @@ if ok then
         use { "lukas-reineke/indent-blankline.nvim", config = setupFrom "indent" }
         use { "akinsho/toggleterm.nvim", config = setupFrom "toggleterm" }
         use { "windwp/nvim-autopairs", config = setupFrom "autopairs" }
-        use { "norcalli/nvim-colorizer.lua" }
+        -- use { "norcalli/nvim-colorizer.lua" }
         use { "karb94/neoscroll.nvim", config = setupFrom "neoscroll" }
-        use { "liuchengxu/vista.vim" }
-        use { "simrat39/symbols-outline.nvim" }
+        -- use { "simrat39/symbols-outline.nvim" }
 
         -- LSP
         use { "neovim/nvim-lspconfig" }
@@ -88,5 +87,6 @@ if ok then
             },
             config = setupFrom "gitsigns",
         }
+
     end)
 end
