@@ -46,6 +46,3 @@ vim.api.nvim_command [[autocmd FileType python,c,cpp,go,lua set sts=4 ]]
 vim.api.nvim_command [[autocmd FileType javascript,vue set sw=2 ]]
 vim.api.nvim_command [[autocmd FileType javascript,vue set ts=2 ]]
 vim.api.nvim_command [[autocmd FileType javascript,vue set sts=2 ]]
-
-vim.g.neovide_refresh_rate = 60
-vim.g.neovide_cursor_vfx_mode = "pixiedust"
