@@ -30,7 +30,7 @@ if ok then
             -- not natively supported but implemented in this plugin.
             border = "curved",
             width = 120,
-            height = 30,
+            height = 18,
             winblend = 0,
             highlights = {
                 border = "Normal",
