@@ -12,7 +12,6 @@ if ok then
             end,
         },
         prettier = {
-            -- prettier
             function()
                 return {
                     exe = "prettier",
