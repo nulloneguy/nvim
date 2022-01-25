@@ -39,8 +39,8 @@ map("n", "<leader>s", "<cmd>SymbolsOutline<cr>", { silent = true, noremap = true
 map("n", "<leader>fm", "<cmd>Format<cr>", { silent = true, noremap = true })
 
 -- [normal saving]
-map("n", "<c-s>", "<cmd>w<cr>", { silent = true, noremap = true })
-map("i", "<c-s>", "<cmd>w<cr>", { silent = true, noremap = true })
+map("n", "<c-s>", "<cmd>w<cr>", { noremap = true })
+map("i", "<c-s>", "<cmd>w<cr>", { noremap = true })
 
 -- [Reset highlighting search]
 map("n", "<esc>", "<cmd>noh<cr>", { silent = true, noremap = true })
