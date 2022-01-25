@@ -3,7 +3,7 @@ local utils = require "utils"
 -- Disable ~ character in empty lines
 vim.cmd [[set fcs=eob:\ ]]
 
-local indent = 2
+local indent = 4
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
