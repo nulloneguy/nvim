@@ -190,24 +190,6 @@ if ok then
     }
 
     gls.right[9] = {
-        FileEncode = {
-            provider = "FileEncode",
-            separator = " ",
-            separator_highlight = { "NONE", colors.bg1 },
-            highlight = { colors.blue, colors.bg1 },
-        },
-    }
-
-    gls.right[10] = {
-        FileFormat = {
-            provider = "FileFormat",
-            highlight = { colors.blue, colors.bg1 },
-            separator = " ",
-            separator_highlight = { "NONE", colors.bg1 },
-        },
-    }
-
-    gls.right[11] = {
         GitIcon = {
             provider = function()
                 return " "
@@ -219,7 +201,7 @@ if ok then
         },
     }
 
-    gls.right[12] = {
+    gls.right[10] = {
         GitBranch = {
             provider = "GitBranch",
             condition = require("galaxyline.provider_vcs").check_git_workspace,
@@ -229,7 +211,7 @@ if ok then
         },
     }
 
-    gls.right[13] = {
+    gls.right[11] = {
         DiffAdd = {
             separator = " ",
             separator_highlight = { "NONE", colors.black },
@@ -239,7 +221,7 @@ if ok then
             highlight = { colors.green, colors.black },
         },
     }
-    gls.right[14] = {
+    gls.right[12] = {
         DiffModified = {
             provider = "DiffModified",
             condition = checkwidth,
@@ -247,7 +229,7 @@ if ok then
             highlight = { colors.orange, colors.black },
         },
     }
-    gls.right[15] = {
+    gls.right[13] = {
         DiffRemove = {
             provider = "DiffRemove",
             condition = checkwidth,
@@ -256,7 +238,7 @@ if ok then
         },
     }
 
-    gls.right[16] = {
+    gls.right[14] = {
         ViModeEnd = {
             provider = function()
                 -- auto change color according the vim mode
