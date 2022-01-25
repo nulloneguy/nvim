@@ -4,10 +4,10 @@ if ok then
     local signs = require("utils").signs
 
     vim.g.nvim_tree_root_folder_modifier = ":t"
-    vim.g.nvim_tree_quit_on_open = 0
+    vim.g.nvim_tree_quit_on_open = 1
     vim.g.nvim_tree_indent_markers = 1
     vim.g.nvim_tree_side = "left"
-    vim.g.nvim_tree_width = 40
+    vim.g.nvim_tree_width = 60
     vim.g.nvim_tree_window_picker_exclude = {
         filetype = {
             "packer",
@@ -70,7 +70,7 @@ if ok then
             ignore_list = {},
         },
         git = {
-            enable = false,
+            enable = true,
         },
         filters = {
             dotfiles = false,
@@ -79,7 +79,7 @@ if ok then
             },
         },
         view = {
-            hide_root_folder = true,
+            hide_root_folder = false,
             auto_resize = true,
         },
     }
