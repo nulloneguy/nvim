@@ -35,6 +35,5 @@ vim.g.dashboard_custom_section = {
     e = { description = { "  Bookmarks                 הּ f m" }, command = "Telescope marks" },
 }
 vim.g.dashboard_custom_footer = {
-    "   ",
     "",
 }
