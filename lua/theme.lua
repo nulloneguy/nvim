@@ -13,7 +13,7 @@ if ok then
         },
         disable = {
             background = true,
-            cursorline = false,
+            cursorline = true,
             eob_lines = true,
         },
         custom_highlights = {
