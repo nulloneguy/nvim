@@ -18,7 +18,7 @@ function utils.map(mode, lhs, rhs, opts)
 end
 
 utils.colors = {
-    bg = "#2e3440",
+    bg = "#12131B",
     bg1 = "#3b4252",
     bg2 = "#262b36",
     bg3 = "#4c566a",
