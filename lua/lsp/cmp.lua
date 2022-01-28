@@ -8,10 +8,7 @@ local loader_from_vscode = require "luasnip.loaders.from_vscode"
 
 loader_from_vscode.lazy_load {
     paths = {
-        "~/.config/nvim/snippets/vscode-standardjs-snippets",
-        "~/.config/nvim/snippets/vue-vscode-snippets/",
-        "~/.config/nvim/snippets/vscode-css-snippets/",
-        "~/.config/nvim/snippets/vscode-python-snippet-pack/",
+        -- "~/.config/nvim/snippets/vue-vscode-snippets/",
     },
 }
 
