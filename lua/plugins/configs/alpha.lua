@@ -1,14 +1,23 @@
-vim.g.dashboard_disable_at_vimenter = 0
-vim.g.dashboard_disable_statusline = 0
-vim.g.dashboard_default_executive = "telescope"
+local ok, alpha = pcall(require, "alpha")
 
-vim.g.dashboard_custom_header = {
+if not ok then
+    return
+end
+
+local dashboard = require "alpha.themes.dashboard"
+
+local function button(sc, txt, keybind, keybind_opts)
+    local b = dashboard.button(sc, txt, keybind, keybind_opts)
+    b.opts.hl = "DashboardShortCut"
+    b.opts.hl_shortcut = "DashboardHeader"
+    return b
+end
+
+dashboard.section.header.val = {
     "",
     "⠀⠀⠀⠀⠀⠀⠀⠀⠀           ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ",
     "⠀⠀⠀⠀⠀⠀                  ⠀⠀⠀⠀⠀⠀ ",
     "⠀⠀⠀⠀⠀⠀                  ⠀⠀⠀⠀⠀⠀ ",
-    "⠀        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀ ",
-    "⠀        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀ ",
     "⠀        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀ ",
     "⠀        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀ ",
     "⠀⠀      ⠀⠀⠀⣶⣶⣶⣶⡆⠀⠀⠀⠀⠀       ⠀⠀ ",
@@ -22,18 +31,24 @@ vim.g.dashboard_custom_header = {
     "⠀        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀ ",
     "⠀        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀ ",
     "⠀        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀ ",
-    "⠀        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀ ",
-    "⠀        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀ ",
     "⠀⠀⠀⠀⠀⠀⠀               ⠀⠀⠀⠀⠀⠀⠀⠀ ",
 }
 
-vim.g.dashboard_custom_section = {
-    a = { description = { "  Find File                 הּ f f" }, command = "Telescope find_files" },
-    b = { description = { "  Recents                   הּ f o" }, command = "Telescope oldfiles" },
-    c = { description = { "  Find Word                 הּ f g" }, command = "Telescope live_grep" },
-    d = { description = { "洛 New File                  הּ f n" }, command = "DashboardNewFile" },
-    e = { description = { "  Bookmarks                 הּ f m" }, command = "Telescope marks" },
+dashboard.section.buttons.val = {
+    button("הּ f f", "  Find File", "<cmd>Telescope find_files<cr>"),
+    button("הּ f o", "  Recents", "<cmd>Telescope oldfiles<cr>"),
+    button("הּ f g", "  Find Word", "<cmd>Telescope live_grep<cr>"),
+    button("הּ f m", "  Bookmarks", "<cmd>Telescope marks<cr>"),
+    button("דּ n ", "  File Tree", "<cmd>NvimTreeToggle<cr>"),
 }
-vim.g.dashboard_custom_footer = {
-    "",
-}
+dashboard.section.footer.val = ""
+dashboard.section.footer.opts.hl = "DashboardFooter"
+
+alpha.setup(dashboard.opts)
+
+vim.cmd [[
+        augroup alpha_tabline
+        au!
+        au FileType alpha set showtabline=0 | au BufUnload <buffer> set showtabline=2
+        augroup END
+    ]]

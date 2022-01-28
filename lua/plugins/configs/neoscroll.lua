@@ -1,5 +1,7 @@
 local ok, neoscroll = pcall(require, "neoscroll")
 
-if ok then
-    neoscroll.setup {}
+if not ok then
+    return
 end
+
+neoscroll.setup {}

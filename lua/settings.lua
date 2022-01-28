@@ -1,48 +1,46 @@
-local utils = require "utils"
+local utils = require("utils")
 
--- Disable ~ character in empty lines
-vim.cmd [[set fcs=eob:\ ]]
-
-local indent = 4
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-vim.cmd [[filetype plugin indent on]]
-vim.cmd [[set noshowmode]]
-vim.cmd [[
-    set nobackup
-    set noswapfile
-]]
+vim.cmd([[set fcs=eob:\ ]])
+vim.cmd([[filetype plugin indent on]])
 
-utils.opt("o", "guifont", "Liga SFMono Nerd Font:h11")
-utils.opt("b", "expandtab", true)
-utils.opt("o", "smarttab", true)
-utils.opt("b", "shiftwidth", indent)
-utils.opt("b", "smartindent", true)
-utils.opt("b", "tabstop", indent)
-utils.opt("o", "hidden", true)
-utils.opt("o", "ignorecase", true)
-utils.opt("o", "scrolloff", 5)
-utils.opt("o", "shiftround", true)
-utils.opt("o", "smartcase", true)
-utils.opt("o", "splitbelow", true)
-utils.opt("o", "splitright", true)
-utils.opt("w", "number", true)
-utils.opt("w", "relativenumber", false)
-utils.opt("o", "clipboard", "unnamed,unnamedplus")
-utils.opt("w", "cursorline", true)
-utils.opt("o", "shiftround", true)
-utils.opt("o", "shortmess", vim.o.shortmess .. "c")
-utils.opt("o", "mouse", "a")
-utils.opt("o", "cmdheight", 1)
+local options = {
+	fileencoding = "utf-8",
+	backup = false,
+	swapfile = false,
+	hlsearch = true,
+	showmode = false,
+	expandtab = true,
+	shiftwidth = 4,
+	tabstop = 4,
+	scrolloff = 8,
+	sidescrolloff = 8,
+	smartindent = true,
+	signcolumn = "yes",
+	hidden = true,
+	ignorecase = true,
+	timeoutlen = 1000,
+	shiftround = true,
+	smartcase = true,
+	splitbelow = true,
+	splitright = true,
+	number = true,
+	relativenumber = false,
+	clipboard = "unnamed,unnamedplus",
+	cursorline = true,
+	mouse = "a",
+	cmdheight = 1,
+}
 
--- Highlight on yank
-vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = true}"
+vim.opt.shortmess:append("c")
 
-vim.api.nvim_command [[autocmd FileType python,c,cpp,go,lua set sw=4 ]]
-vim.api.nvim_command [[autocmd FileType python,c,cpp,go,lua set ts=4 ]]
-vim.api.nvim_command [[autocmd FileType python,c,cpp,go,lua set sts=4 ]]
+for key, value in pairs(options) do
+	vim.opt[key] = value
+end
 
-vim.api.nvim_command [[autocmd FileType javascript,vue set sw=2 ]]
-vim.api.nvim_command [[autocmd FileType javascript,vue set ts=2 ]]
-vim.api.nvim_command [[autocmd FileType javascript,vue set sts=2 ]]
+utils.setSpacesSize({ javascript = 4, python = 4 })
+
+vim.g.nvim_markdown_preview_format = "gfm"
+vim.g.nvim_markdown_preview_theme = "github"

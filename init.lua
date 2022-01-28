@@ -1,5 +1,6 @@
 require "theme"
 require "settings"
+require "autocmds"
 require "plugins"
 require "lsp"
 require "mappings"
