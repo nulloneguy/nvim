@@ -1,94 +1,68 @@
-# My Neovim setup
+# Neovim from scratch
 
-## Screenshots
+## Try out this config
 
-### Dashboard
-
-![dashboard](screenshots/dashboard.png)
-
-### NvimTree
-
-![](screenshots/nvimtree.png)
-
-### Packer
-
-![](screenshots/packer.png)
-
-### Linter
-
-![](screenshots/linter.png)
-
-### Terminal
-
-![](screenshots/terminal.png)
-
-## Features
-
-- Fast plugin loading.
-- File navigation with nvim-tree.lua.
-- Managing tabs, buffers with bufferline.nvim.
-- Beautiful and configurable icons with nvim-web-devicons.
-- Pretty and functional statusline with galaxyline.nvim.
-- Syntax highlighting with nvim-treesitter.
-- Dashboard with dashboard.nvim
-- Git diffs and more with gitsigns.nvim .
-- NeoVim Lsp configuration with nvim-lspconfig.
-- Easy to use format with format.nvim
-- File searching, previewing image and text files and more with telescope.nvim.
-- Autoclosing braces and html tags with nvim-autopairs. Autocompletion with .
-- Indentlines with indent-blankline.nvim.
-- Useful snippets with LuaSnip.
-- Tmux support with tmux.nvim
-
-## Installation:
-
-- install `nonevim` v0.6
-- copy config to `$HOME/.config/nvim/`
-- run `neovim`
-- execute: `PackerInstall`
-
-## Install snippets with luasnip:
-
-- Clone snippets repo in `$HOME/.config/nvim/snippets/`
-- Add snippet path to `$HOME/.config/lua/cmp.lua`
-
-### example:
-
-- Cloning repo
-  `git clone https://github.undefined.moe/L13/vscode-css-snippets ~/.config/nvim/snippets/vscode-css-snippets `
-- Add path in ``$HOME/.config/lua/cmp.lua``:
-
-```lua
-require("luasnip/loaders/from_vscode").lazy_load {
-    paths = {
-```
-// Add path to cloned snippet dir here<br/>
-``"~/.config/nvim/snippets/vscode-css-snippets",``
-```lua
-    },
-}
-```
-
-## Bloat
-
-setup has 38 plugins installed by default, yet it is still very fast because it uses the Packer plugin manager.
-Packer.nvim allows you to lazy load plugins, meaning they only get loaded when absolutely required.
-
-## Run in Docker Container
-
-This will leave your current Neovim configuration untouched. Once you exit Neovim, the image is deleted.
+Make sure to remove or move your current `nvim` directory
 
 ```
-docker run -w /root -it --rm alpine:edge sh -uelic '
-    apk add git nodejs neovim ripgrep alpine-sdk --update
-    git clone https://github.com/nulloneguy/my-nvim-setup ~/.config/nvim
-    nvim -c "autocmd User PackerComplete quitall" -c "PackerSync"
-    nvim
-    '
+git clone git@github.com:ChristianChiarulli/Neovim-from-scratch.git ~/.config/nvim
 ```
 
-## TODO
+Run `nvim` and wait for the plugins to be installed 
 
-- Add more amenities
-- Add more themes
-- Add more basic supported programming languages
+**NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
+
+
+each video will be associated with a branch so checkout the one you are interested in
+
+## Get healthy
+
+Open `nvim` and enter the following:
+
+```
+:checkhealth
+```
+
+You'll probably notice you don't have support for copy/paste also that python and node haven't been setup
+
+So let's fix that
+
+First we'll fix copy/paste
+
+- On mac `pbcopy` should be builtin
+
+- On Ubuntu
+
+  ```
+  sudo apt install xsel
+  ```
+
+- On Arch Linux
+
+  ```
+  sudo pacman -S xsel
+  ```
+
+Next we need to install python support (node is optional)
+
+- Neovim python support
+
+  ```
+  pip install pynvim
+  ```
+
+- Neovim node support
+
+  ```
+  npm i -g neovim
+  ```
+
+## Fonts
+
+- [A nerd font](https://github.com/ryanoasis/nerd-fonts)
+
+- [codicon](https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf)
+- [An emoji font](https://github.com/googlefonts/noto-emoji/blob/main/fonts/NotoColorEmoji.ttf)
+After moving fonts to `~/.local/share/fonts/`
+
+Run: `$ fc-cache -f -v`
