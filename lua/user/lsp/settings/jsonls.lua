@@ -4,9 +4,9 @@ if not status_ok then
 end
 
 return {
- settings = {
+  settings = {
     json = {
-      schemas = require('schemastore').json.schemas(),
+      schemas = require("schemastore").json.schemas(),
     },
   },
   setup = {

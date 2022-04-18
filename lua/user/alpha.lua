@@ -17,7 +17,8 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
   dashboard.button("r", icons.ui.History .. " Recent files", ":Telescope oldfiles <CR>"),
   dashboard.button("f", icons.documents.Files .. " Find file", ":Telescope find_files <CR>"),
-  dashboard.button("e", icons.ui.NewFile .. " New file", ":ene <BAR> startinsert <CR>"),
+  dashboard.button("n", icons.ui.NewFile .. " New file", ":ene <BAR> startinsert <CR>"),
+  dashboard.button("g", icons.ui.Code .. " Open ~/Repos", ":e ~/Repos/ <CR>"),
   dashboard.button(
     "p",
     icons.git.Repo .. " Find project",

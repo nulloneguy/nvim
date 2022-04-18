@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+  use "unblevable/quick-scope"
   use "phaazon/hop.nvim"
   use "andymass/vim-matchup"
   use "nacro90/numb.nvim"
@@ -64,15 +65,17 @@ return packer.startup(function(use)
   use "br1anchen/nvim-colorizer.lua"
   use "alvan/vim-closetag"
   use "windwp/nvim-spectre"
-  -- use "kevinhwang91/nvim-bqf"
+  use "folke/zen-mode.nvim"
+  use "folke/todo-comments.nvim"
+  use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
   use "lunarvim/vim-solidity"
   use "Mephistophiles/surround.nvim"
   use "tpope/vim-repeat"
-  use "Shatur/neovim-session-manager"
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
+  -- use "metakirby5/codi.vim"
   use "SmiteshP/nvim-gps"
   use { "michaelb/sniprun", run = "bash ./install.sh" }
   use {
@@ -92,6 +95,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
   use {
     "tzachar/cmp-tabnine",
@@ -135,6 +139,9 @@ return packer.startup(function(use)
   use "github/copilot.vim"
   use "RRethy/vim-illuminate"
 
+  -- Java
+  use "mfussenegger/nvim-jdtls"
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
@@ -157,6 +164,7 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
   use "f-person/git-blame.nvim"
+  use "ruifm/gitlinker.nvim"
   use "mattn/vim-gist"
   use "mattn/webapi-vim"
   use "https://github.com/rhysd/conflict-marker.vim"

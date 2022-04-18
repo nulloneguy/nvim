@@ -8,7 +8,16 @@ if not snip_status_ok then
   return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip/loaders/from_vscode").load {
+  paths = {
+    "~/.config/nvim/snippets/vue-vscode-snippets",
+    "~/.config/nvim/snippets/javascript1",
+    "~/.config/nvim/snippets/javascript2",
+    "~/.config/nvim/snippets/javascript3",
+    "~/.config/nvim/snippets/html",
+    "~/.config/nvim/snippets/css",
+  },
+}
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -88,14 +97,12 @@ cmp.setup {
         -- luasnip = "[Snippet]",
         -- buffer = "[Buffer]",
         -- path = "[Path]",
-        -- emoji = "[Emoji]",
 
         nvim_lsp = "",
         nvim_lua = "",
         luasnip = "",
         buffer = "",
         path = "",
-        emoji = "",
       })[entry.source.name]
       return vim_item
     end,
@@ -107,13 +114,11 @@ cmp.setup {
     { name = "buffer" },
     { name = "cmp_tabnine" },
     { name = "path" },
-    { name = "emoji" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  -- documentation = true,
   documentation = {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
