@@ -15,12 +15,12 @@ local completion = null_ls.builtins.completion
 null_ls.setup {
   debug = false,
   sources = {
-    --formatting.prettier_d_slim.with {
-    --  extra_filetypes = { "toml", "solidity" },
-    --  extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-    --},
-    --formatting.black.with { extra_args = { "--fast" } },
-    diagnostics.eslint_d,
+    formatting.prettier_d_slim.with {
+      extra_filetypes = { "toml", "solidity", "vue" },
+      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+    },
+    formatting.black.with { extra_args = { "--fast" } },
+    -- diagnostics.eslint_d,
     formatting.stylua,
     completion.spell,
     completion.luasnip,

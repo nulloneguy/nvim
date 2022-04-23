@@ -31,11 +31,10 @@ telescope.setup {
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<C-d>"] = require("telescope.actions").delete_buffer,
 
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
+        -- ["<PageUp>"] = actions.results_scrolling_up,
+        -- ["<PageDown>"] = actions.results_scrolling_down,
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -109,12 +108,12 @@ telescope.setup {
         },
       },
     },
-    ["ui-select"] = {
-      require("telescope.themes").get_dropdown {
-        previewer = false,
-        -- even more opts
-      },
-    },
+    --["ui-select"] = {
+    --  require("telescope.themes").get_dropdown {
+    --    previewer = false,
+    --    -- even more opts
+    --  },
+    --},
   },
 }
 

@@ -34,6 +34,11 @@ vim.cmd [[
     autocmd!
     autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
   augroup end
+
+  augroup illuminate_augroup
+    autocmd!
+    autocmd VimEnter * hi link illuminatedWord LspReferenceText
+  augroup END
 ]]
 -- autocmd BufLeave * if (!exists('b:caret')) | let b:caret = winsaveview() | endif
 -- autocmd BufEnter * if (exists('b:caret')) | call winrestview(b:caret) | endif

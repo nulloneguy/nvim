@@ -67,3 +67,7 @@ focusonnetactive
 localhost
 api
 serverless
+statusline
+Lualine
+lightline
+galaxyline

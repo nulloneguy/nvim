@@ -78,7 +78,6 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    -- lualine_a = { branch, diagnostics },
     lualine_a = { mode },
     lualine_b = { branch, diagnostics },
     -- lualine_c = { _gps },
