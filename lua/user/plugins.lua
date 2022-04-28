@@ -67,7 +67,6 @@ return packer.startup(function(use)
   -- use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
-  use "lunarvim/vim-solidity"
   use "Mephistophiles/surround.nvim"
   use "tpope/vim-repeat"
   use "rcarriga/nvim-notify"
@@ -85,7 +84,7 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
 
   -- cmp plugins
-  use { "hrsh7th/nvim-cmp", commit = "d93104244c3834fbd8f3dd01da9729920e0b5fe7" } -- The completion plugin
+  use { "hrsh7th/nvim-cmp" } -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -108,7 +107,6 @@ return packer.startup(function(use)
         },
       }
     end,
-
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
   }
@@ -159,12 +157,6 @@ return packer.startup(function(use)
   use "mattn/vim-gist"
   use "mattn/webapi-vim"
   use "https://github.com/rhysd/conflict-marker.vim"
-
-  -- DAP
-  -- use "mfussenegger/nvim-dap"
-  -- use "theHamsta/nvim-dap-virtual-text"
-  -- use "rcarriga/nvim-dap-ui"
-  -- use "Pocco81/DAPInstall.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

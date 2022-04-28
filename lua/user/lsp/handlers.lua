@@ -3,7 +3,6 @@ local M = {}
 M.setup = function()
   local icons = require "user.icons"
   local signs = {
-
     { name = "DiagnosticSignError", text = icons.diagnostics.Error },
     { name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
     { name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
