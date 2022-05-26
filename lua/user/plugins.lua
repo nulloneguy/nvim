@@ -82,6 +82,8 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
+  use "cocopon/iceberg.vim"
+  use "arzg/vim-substrata"
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp" } -- The completion plugin
@@ -91,25 +93,6 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
-  use {
-    "tzachar/cmp-tabnine",
-    config = function()
-      local tabnine = require "cmp_tabnine.config"
-      tabnine:setup {
-        max_lines = 1000,
-        max_num_results = 20,
-        sort = true,
-        run_on_every_keystroke = true,
-        snippet_placeholder = "..",
-        ignored_file_types = { -- default is not to ignore
-          -- uncomment to ignore in lua:
-          -- lua = true
-        },
-      }
-    end,
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-  }
   -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
 
   -- snippets

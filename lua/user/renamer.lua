@@ -3,18 +3,8 @@ if not status_ok then
   return
 end
 
-vim.api.nvim_set_keymap(
-  "i",
-  "<F2>",
-  '<cmd>lua require("renamer").rename({empty = true})<cr>',
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<F2>",
-  '<cmd>lua require("renamer").rename({empty = true})<cr>',
-  { noremap = true, silent = true }
-)
+vim.api.nvim_set_keymap("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 local mappings_utils = require "renamer.mappings.utils"
 renamer.setup {
   -- The popup title, shown if `border` is true

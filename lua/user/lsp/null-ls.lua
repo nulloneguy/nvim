@@ -22,7 +22,7 @@ null_ls.setup {
     formatting.black.with { extra_args = { "--fast" } },
     -- diagnostics.eslint_d,
     formatting.stylua,
-    completion.spell,
     completion.luasnip,
+    completion.spell,
   },
 }
