@@ -32,7 +32,7 @@ local cfg = {
   -- to view the hiding contents
   max_width = 120, -- max_width of signature floating_window, line will be wrapped if exceed max_width
   handler_opts = {
-    border = "rounded", -- double, rounded, single, shadow, none
+    border = "single", -- double, rounded, single, shadow, none
   },
 
   always_trigger = false, -- sometime show signature on new line or in middle of parameter can be confusing, set it to false for #58
@@ -41,7 +41,7 @@ local cfg = {
   extra_trigger_chars = {}, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
   zindex = 200, -- by default it will be on top of all floating windows, set to <= 50 send it to bottom
 
-  padding = "", -- character to pad on left and right of signature can be ' ', or '|'  etc
+  padding = "", -- character to pad on left and right of signature can be ' ', or '|'  etc
 
   transparency = nil, -- disabled by default, allow floating win transparent value 1~100
   shadow_blend = 36, -- if you using shadow as border use this set the opacity

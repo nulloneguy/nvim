@@ -55,8 +55,8 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 
 -- Normal save
-keymap("i", "<C-s>", ":w<CR>", opts)
-keymap("n", "<C-s>", ":w<CR>", opts)
+keymap("i", "<C-s>", "<cmd>w<CR>", opts)
+keymap("n", "<C-s>", "<cmd>w<CR>", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)

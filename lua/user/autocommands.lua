@@ -2,6 +2,7 @@ vim.api.nvim_create_autocmd({ "User" }, {
   pattern = { "AlphaReady" },
   callback = function()
     vim.cmd [[
+      set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
       set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
     ]]
   end,
@@ -23,6 +24,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.cmd [[
       setlocal wrap
       setlocal spell
+    ]]
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+  callback = function()
+    vim.cmd [[
+      hi Normal guibg=NONE ctermbg=NONE
     ]]
   end,
 })

@@ -3,11 +3,6 @@ if not status_ok then
   return
 end
 
-local status_gps_ok, gps = pcall(require, "nvim-gps")
-if not status_gps_ok then
-  return
-end
-
 local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
@@ -26,9 +21,10 @@ local diagnostics = {
 
 local diff = {
   "diff",
-  colored = false,
+  colored = true,
   symbols = { added = icons.git.Add .. " ", modified = icons.git.Mod .. " ", removed = icons.git.Remove .. " " }, -- changes diff symbols
   cond = hide_in_width,
+  separator = "│",
 }
 
 local mode = {
@@ -42,6 +38,7 @@ local filetype = {
   "filetype",
   icons_enabled = false,
   icon = nil,
+  separator = "│",
 }
 
 local branch = {
@@ -55,23 +52,26 @@ local location = {
   padding = 0,
 }
 
-local spaces = function()
-  return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-end
+local spaces = {
+  function()
+    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+  end,
+  separator = "│",
+}
 
-local nvim_gps = function()
-  local gps_location = gps.get_location()
-  if gps_location == "error" then
-    return ""
-  else
-    return gps.get_location()
+local current_signature = function()
+  if not pcall(require, "lsp_signature") then
+    return
   end
+  local sig = require("lsp_signature").status_line(30)
+  -- return sig.label .. "🐼" .. sig.hint
+  return "%#SLSeparator#" .. sig.hint .. "%*"
 end
 
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = "tokyonight",
+    theme = "iceberg_dark",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "toggleterm" },
@@ -80,12 +80,9 @@ lualine.setup {
   sections = {
     lualine_a = { mode },
     lualine_b = { branch, diagnostics },
-    -- lualine_c = { _gps },
-    lualine_c = {
-      { nvim_gps, cond = hide_in_width },
-    },
+    lualine_c = {},
     -- lualine_x = { "encoding", "fileformat", "filetype" },
-    lualine_x = { diff, spaces, "encoding", filetype },
+    lualine_x = { spaces, filetype, "encoding" },
     lualine_y = { location },
     lualine_z = {},
   },
@@ -93,7 +90,7 @@ lualine.setup {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {},
-    lualine_x = { "location" },
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {},
   },

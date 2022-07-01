@@ -1,0 +1,22 @@
+return {
+  cmd = { "vscode-css-language-server", "--stdio" },
+  filetypes = {
+    "html",
+    "css",
+    "scss",
+    -- "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "haml",
+    "xml",
+    "vue",
+    "xsl",
+    "pug",
+    "slim",
+    "sass",
+    "stylus",
+    "less",
+    "handlebars",
+  },
+}

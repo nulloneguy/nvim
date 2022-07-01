@@ -5,13 +5,15 @@ end
 
 local actions = require "telescope.actions"
 telescope.load_extension "media_files"
+local icons = require "user.icons"
 
 telescope.setup {
   defaults = {
 
-    prompt_prefix = " ",
-    selection_caret = "> ",
+    prompt_prefix = icons.ui.Telescope .. " ",
+    selection_caret = " ",
     path_display = { "smart" },
+    file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
 
     mappings = {
       i = {
@@ -27,14 +29,17 @@ telescope.setup {
         ["<Up>"] = actions.move_selection_previous,
 
         ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
+        ["<C-s>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
-        ["<C-d>"] = require("telescope.actions").delete_buffer,
+        ["<c-d>"] = require("telescope.actions").delete_buffer,
 
-        -- ["<PageUp>"] = actions.results_scrolling_up,
-        -- ["<PageDown>"] = actions.results_scrolling_down,
+        -- ["<C-u>"] = actions.preview_scrolling_up,
+        -- ["<C-d>"] = actions.preview_scrolling_down,
+
+        ["<PageUp>"] = actions.results_scrolling_up,
+        ["<PageDown>"] = actions.results_scrolling_down,
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -93,29 +98,5 @@ telescope.setup {
       filetypes = { "png", "webp", "jpg", "jpeg" },
       find_cmd = "rg", -- find command (defaults to `fd`)
     },
-    file_browser = {
-      -- theme = "ivy",
-      -- require("telescope.themes").get_dropdown {
-      --   previewer = false,
-      --   -- even more opts
-      -- },
-      mappings = {
-        ["i"] = {
-          -- your custom insert mode mappings
-        },
-        ["n"] = {
-          -- your custom normal mode mappings
-        },
-      },
-    },
-    --["ui-select"] = {
-    --  require("telescope.themes").get_dropdown {
-    --    previewer = false,
-    --    -- even more opts
-    --  },
-    --},
   },
 }
-
-telescope.load_extension "ui-select"
-telescope.load_extension "file_browser"
