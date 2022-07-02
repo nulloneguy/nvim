@@ -16,7 +16,7 @@ null_ls.setup {
   debug = false,
   sources = {
     formatting.prettier_d_slim.with {
-      extra_filetypes = { "toml", "solidity", "vue" },
+      extra_filetypes = { "toml", "solidity", "vue", "typescript" },
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
     formatting.black.with { extra_args = { "--fast" } },
