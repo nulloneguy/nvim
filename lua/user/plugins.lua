@@ -125,6 +125,7 @@ return packer.startup(function(use)
     "zbirenbaum/copilot-cmp",
     module = "copilot_cmp",
   }
+  use "j-hui/fidget.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
