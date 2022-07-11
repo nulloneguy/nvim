@@ -34,7 +34,7 @@ local options = {
   showcmd = false,
   ruler = false,
   sidescrolloff = 8,
-  guifont = "monospace:h17", -- the font used in graphical neovim applications
+  guifont = "monospace:h13", -- the font used in graphical neovim applications
   langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
   fillchars = "vert: ",
 }
