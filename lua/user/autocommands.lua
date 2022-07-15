@@ -28,13 +28,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-  callback = function()
-    vim.cmd [[
-      hi Normal guibg=NONE ctermbg=NONE
-    ]]
-  end,
-})
+--vim.api.nvim_create_autocmd({ "VimEnter" }, {
+-- callback = function()
+--    vim.cmd [[
+--     hi Normal guibg=NONE ctermbg=NONE
+--    ]]
+--  end,
+--})
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   callback = function()
@@ -64,14 +64,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
-    vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
-  end,
-})
-
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  pattern = { "*.java" },
-  callback = function()
-    vim.lsp.codelens.refresh()
+    vim.highlight.on_yank { higroup = "Visual", timeout = 150 }
   end,
 })
 
@@ -84,7 +77,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" },
   callback = function()
-    vim.lsp.buf.formatting_sync()
+    vim.lsp.buf.formatting()
   end,
 })
 

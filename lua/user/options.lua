@@ -30,13 +30,14 @@ local options = {
   numberwidth = 4, -- set number column width to 2 {default 4}
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
   wrap = false, -- display lines as one long line
-  scrolloff = 9, -- is one of my fav
+  scrolloff = 10, -- is one of my fav
   showcmd = false,
   ruler = false,
   sidescrolloff = 8,
-  guifont = "monospace:h17", -- the font used in graphical neovim applications
+  guifont = "JetBrains Mono:h11", -- the font used in graphical neovim applications
   langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
   fillchars = "vert: ",
+  background = "dark",
 }
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -49,4 +50,3 @@ for k, v in pairs(options) do
 end
 
 vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

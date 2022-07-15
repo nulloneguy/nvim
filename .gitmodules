@@ -1,0 +1,3 @@
+[submodule "snippets/javascript"]
+	path = snippets/javascript
+	url = https://github.com/nathanchapman/vscode-javascript-snippets

@@ -38,7 +38,4 @@ configs.setup {
     },
     disable = { "html" },
   },
-  playground = {
-    enable = true,
-  },
 }

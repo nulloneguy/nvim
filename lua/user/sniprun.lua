@@ -30,7 +30,7 @@ sniprun.setup {
 
   display_options = {
     terminal_width = 45, --# change the terminal display option width
-    notification_timeout = 8, --# timeout for nvim_notify output
+    notification_timeout = 3, --# timeout for nvim_notify output
   },
 
   --# You can use the same keys to customize whether a sniprun producing
@@ -52,6 +52,6 @@ sniprun.setup {
   inline_messages = 0, --# inline_message (0/1) is a one-line way to display messages
   --# to workaround sniprun not being able to display anything
 
-  borders = "shadow", --# display borders around floating windows
+  borders = "double", --# display borders around floating windows
   --# possible values are 'none', 'single', 'double', or 'shadow'
 }

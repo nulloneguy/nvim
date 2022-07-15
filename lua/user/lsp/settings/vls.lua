@@ -34,9 +34,9 @@ return {
       },
       useWorkspaceDependencies = true,
       validation = {
-        script = false,
-        style = false,
-        template = false,
+        script = true,
+        style = true,
+        template = true,
       },
     },
   },

@@ -45,20 +45,16 @@ return packer.startup(function(use)
   -- use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  -- use "numToStr/Comment.nvim"
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
-  -- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "phaazon/hop.nvim"
-  use "andymass/vim-matchup"
+  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "nacro90/numb.nvim"
   use "monaqa/dial.nvim"
   use "br1anchen/nvim-colorizer.lua"
@@ -66,11 +62,8 @@ return packer.startup(function(use)
   use "windwp/nvim-spectre"
   -- use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
-  use "MattesGroeger/vim-bookmarks"
-  use "Mephistophiles/surround.nvim"
+  use "kylechui/nvim-surround"
   use "rcarriga/nvim-notify"
-  use "tversteeg/registers.nvim"
-  use "SmiteshP/nvim-gps"
   use { "michaelb/sniprun", run = "bash ./install.sh" }
   use {
     "iamcco/markdown-preview.nvim",
@@ -89,10 +82,9 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
-
-  -- Rust
-  use "simrat39/rust-tools.nvim"
+  use "zbirenbaum/copilot-cmp"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -101,35 +93,19 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  --use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "jose-elias-alvarez/nvim-lsp-ts-utils"
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
   use "b0o/SchemaStore.nvim"
-  --use {
-  --  "folke/trouble.nvim",
-  --  cmd = "TroubleToggle",
-  --}
-  use "github/copilot.vim"
+  use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
-  use {
-    "zbirenbaum/copilot.lua",
-    event = { "VimEnter" },
-    config = function()
-      vim.defer_fn(function()
-        require "user.copilot"
-      end, 100)
-    end,
-  }
-  use {
-    "zbirenbaum/copilot-cmp",
-    module = "copilot_cmp",
-  }
   use "j-hui/fidget.nvim"
+  use "nvim-lua/lsp_extensions.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use "tom-anders/telescope-vim-bookmarks.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
 
   -- Treesitter
@@ -138,10 +114,9 @@ return packer.startup(function(use)
     -- run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  use { "p00f/nvim-ts-rainbow" }
-  use "nvim-treesitter/playground"
+  use "p00f/nvim-ts-rainbow"
   use "windwp/nvim-ts-autotag"
-  use "romgrk/nvim-treesitter-context"
+  -- use "romgrk/nvim-treesitter-context"
   -- use "mizlan/iswap.nvim"
 
   -- Git
@@ -149,12 +124,16 @@ return packer.startup(function(use)
   use "f-person/git-blame.nvim"
   use "mattn/vim-gist"
   use "mattn/webapi-vim"
-  -- use "https://github.com/rhysd/conflict-marker.vim"
 
-  use {
-    "mhartington/nvim-typescript",
-    run = "./install.sh",
-  }
+  -- Javascript
+  --use "pangloss/vim-javascript"
+  --use "leafgarland/typescript-vim"
+  --use "peitalin/vim-jsx-typescript"
+  --use "maxmellon/vim-jsx-pretty"
+  --use {
+  --  "mhartington/nvim-typescript",
+  --  run = "./install.sh",
+  --}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
